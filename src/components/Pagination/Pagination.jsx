@@ -19,11 +19,12 @@ const Pagination = () => {
       justifyContent={"center"}
       alignItems={"center"}
       padding={2}
+      paddingY={6}
       gap={4}
       borderBottom="1px solid gray"
     >
       <Box>
-        <Text>Total results: {results} </Text>
+        <Text color="#66CE5D">Total results: {results} </Text>
       </Box>
       <Box
         display={"flex"}
@@ -48,20 +49,22 @@ const Pagination = () => {
           onChange={(e) => goToPage("", e)}
           border="unset"
           _focusVisible={{ border: "none" }}
+          color="#00B0C8"
         />
       </Box>
       <Box>
-        <Text>
+        <Text color="#66CE5D">
           Page: {actualPage} of {pages}{" "}
         </Text>
       </Box>
       <Box display={"flex"} alignItems="center">
-        <Text width={"100%"}>Go to page </Text>
+        <Text color="#66CE5D" width={"100%"}>Go to page </Text>
         <Select
           data-type="goTo"
           placeholder="Select option"
           value={actualPage}
           onChange={(e) => goToPage("", e)}
+          color="#00B0C8"
         >
           {Array.from(Array(pages).keys()).map((page) => (
             <option key={page + 1} value={page + 1}>
@@ -74,7 +77,8 @@ const Pagination = () => {
       <Box display={"flex"} gap={4}>
         {prevPage && (
           <Button
-            colorScheme="blue"
+            backgroundColor={"#66CE5D"}
+            color={"#fff"}
             data-type="prev"
             onClick={(e) => goToPage(prevPage, e)}
           >
@@ -83,7 +87,8 @@ const Pagination = () => {
         )}
         {nextPage && (
           <Button
-            colorScheme="blue"
+            backgroundColor={"#66CE5D"}
+            color={"#fff"}
             data-type="next"
             onClick={(e) => goToPage(nextPage, e)}
           >
